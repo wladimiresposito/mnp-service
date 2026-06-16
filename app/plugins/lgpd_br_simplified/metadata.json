@@ -1,0 +1,8 @@
+{
+  "plugin_id": "lgpd_br_simplified",
+  "plugin_version": "2026.1-demo",
+  "jurisdiction": "BR",
+  "domain": "data_protection",
+  "source": "LGPD simplified demo rules",
+  "updated_at": "2026-06-12"
+}

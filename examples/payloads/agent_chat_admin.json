@@ -1,0 +1,10 @@
+{
+  "tenant_id": "clinic-demo",
+  "session_id": "agent-002",
+  "user_id": "user-456",
+  "user_text": "Qual o horário de funcionamento da clínica?",
+  "extract_mode": "heuristic",
+  "top_k": 3,
+  "allow_tool_calls": true,
+  "enqueue_human_review_on_fallback": true
+}

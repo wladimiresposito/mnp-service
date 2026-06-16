@@ -1,0 +1,8 @@
+{
+  "plugin_id": "internal_policy_simplified",
+  "plugin_version": "2026.1-demo",
+  "jurisdiction": "internal",
+  "domain": "company_policy",
+  "source": "MNP MVP internal safety policy",
+  "updated_at": "2026-06-12"
+}

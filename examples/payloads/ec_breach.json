@@ -1,0 +1,22 @@
+{
+  "subject": "user-123",
+  "purpose": "process_health_data_for_pre_anamnesis",
+  "current_time": 10,
+  "data_category": "health",
+  "events": [
+    {
+      "t": 1,
+      "kind": "grant_consent",
+      "subject": "user-123",
+      "purpose": "process_health_data_for_pre_anamnesis"
+    },
+    {
+      "t": 8,
+      "kind": "data_breach",
+      "subject": "user-123",
+      "purpose": "process_health_data_for_pre_anamnesis"
+    }
+  ],
+  "requires_legal_basis": true,
+  "requires_purpose_confirmation": true
+}

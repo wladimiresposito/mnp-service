@@ -1,0 +1,21 @@
+{
+  "tenant_id": "clinic-demo",
+  "session_id": "sess-002",
+  "user_id": "user-456",
+  "tool_call": {
+    "name": "send_whatsapp_message",
+    "arguments": {
+      "to": "+5511999999999",
+      "body": "Resumo da pré-anamnese contendo informações de saúde."
+    },
+    "requires_side_effect": true,
+    "facts": {
+      "external_communication": true,
+      "contains_sensitive_health_data": true
+    }
+  },
+  "plugins": [
+    "lgpd_br_simplified",
+    "internal_policy_simplified"
+  ]
+}

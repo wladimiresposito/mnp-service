@@ -1,0 +1,8 @@
+{
+  "plugin_id": "lgpd_event_calculus",
+  "plugin_version": "2026.1-experimental",
+  "jurisdiction": "BR",
+  "domain": "data_protection_event_calculus",
+  "source": "Explicit Event Calculus-style LGPD temporal demo rules",
+  "updated_at": "2026-06-12"
+}

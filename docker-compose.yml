@@ -1,0 +1,44 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: mnp-postgres-v1-0
+    environment:
+      POSTGRES_USER: mnp
+      POSTGRES_PASSWORD: mnp
+      POSTGRES_DB: mnp
+    ports:
+      - "5432:5432"
+    volumes:
+      - mnp_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mnp -d mnp"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  mnp:
+    build: .
+    container_name: mnp-service-v1-2
+    ports:
+      - "8000:8000"
+    environment:
+      - MNP_ENV=dev
+      - MNP_REQUIRE_API_KEY=false
+      - MNP_AUDIT_BACKEND=postgres
+      - MNP_POSTGRES_DSN=postgresql://mnp:mnp@postgres:5432/mnp
+      - MNP_SQLITE_PATH=/app/data/mnp.sqlite
+      - MNP_TENANT_CONFIG_PATH=/app/app/config/tenants.yaml
+      - MNP_DEFAULT_FACT_EXTRACTOR=heuristic
+      - MNP_FACT_CONFIDENCE_THRESHOLD=0.70
+      - MNP_HUMAN_REVIEW_PATH=/app/data/human_review.jsonl
+      - MNP_RAG_KNOWLEDGE_BASE_PATH=/app/app/rag/knowledge_base
+      - MNP_RAG_TOP_K=3
+      - MNP_AGENT_GENERATOR_MODE=mock
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  mnp_postgres_data:

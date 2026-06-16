@@ -1,0 +1,29 @@
+{
+  "tenant_id": "legal-demo",
+  "session_id": "sess-legal-001",
+  "user_id": "user-legal-123",
+  "context": {
+    "tenant_id": "legal-demo",
+    "session_id": "sess-legal-001",
+    "user_id": "user-legal-123",
+    "user_text": "Tenho uma mancha na pele. Posso usar corticoide?",
+    "facts": {
+      "domain": "healthcare",
+      "contains_health_data": true,
+      "contains_sensitive_health_data": true,
+      "request_type": "clinical_recommendation",
+      "mentions_medication": true,
+      "legal_basis_confirmed": false,
+      "fact_extraction_confidence": 0.90
+    }
+  },
+  "draft": {
+    "text": "Pode usar a pomada com corticoide por alguns dias. É seguro usar.",
+    "facts": {
+      "domain": "healthcare",
+      "request_type": "clinical_recommendation",
+      "mentions_medication": true
+    },
+    "confidence": 0.82
+  }
+}

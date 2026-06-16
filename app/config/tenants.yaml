@@ -1,0 +1,83 @@
+# Configuração v0.3: plugins ativos por tenant.
+#
+# Regras:
+# - default é usado quando tenant_id não existe.
+# - enabled_plugins define a pilha normativa base.
+# - disabled_plugins remove plugins mesmo que estejam no default.
+# - composition está preparado para evolução; no MVP permanece conservative.
+# - plugin_settings guarda parâmetros específicos de plugin por tenant.
+
+default:
+  composition: conservative
+  enabled_plugins:
+    - lgpd_br_simplified
+    - medical_safety_simplified
+    - internal_policy_simplified
+  disabled_plugins: []
+  plugin_settings:
+    medical_safety_simplified:
+      require_human_review_for_high_risk: false
+
+clinic-demo:
+  composition: conservative
+  enabled_plugins:
+    - lgpd_br_simplified
+    - medical_safety_simplified
+    - internal_policy_simplified
+  disabled_plugins: []
+  plugin_settings:
+    medical_safety_simplified:
+      require_human_review_for_high_risk: true
+
+legal-demo:
+  composition: conservative
+  enabled_plugins:
+    - lgpd_br_simplified
+    - internal_policy_simplified
+  disabled_plugins:
+    - medical_safety_simplified
+  plugin_settings: {}
+
+public-demo:
+  composition: conservative
+  enabled_plugins:
+    - internal_policy_simplified
+  disabled_plugins:
+    - lgpd_br_simplified
+    - medical_safety_simplified
+  plugin_settings: {}
+
+
+clinic-asp-demo:
+  composition: conservative
+  enabled_plugins:
+    - lgpd_temporal_asp
+  disabled_plugins: []
+  plugin_settings:
+    lgpd_temporal_asp:
+      purpose: process_health_data_for_pre_anamnesis
+
+
+clinic-ec-demo:
+  composition: conservative
+  enabled_plugins:
+    - lgpd_event_calculus
+  disabled_plugins: []
+  plugin_settings:
+    lgpd_event_calculus:
+      purpose: process_health_data_for_pre_anamnesis
+
+
+# Tenant que demonstra composicao hierarquica: normas vinculantes (LGPD,
+# medical_safety) prevalecem; internal_policy_simplified e suplementar
+# (binding=False) e nunca bloqueia sozinho, no maximo escala.
+clinic-hierarchical-demo:
+  composition: hierarchical
+  enabled_plugins:
+    - lgpd_br_simplified
+    - medical_safety_simplified
+    - internal_policy_simplified
+  disabled_plugins: []
+  plugin_settings:
+    medical_safety_simplified:
+      require_human_review_for_high_risk: true

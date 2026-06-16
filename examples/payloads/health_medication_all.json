@@ -1,0 +1,37 @@
+{
+  "tenant_id": "clinic-demo",
+  "session_id": "sess-001",
+  "user_id": "user-123",
+  "context": {
+    "tenant_id": "clinic-demo",
+    "session_id": "sess-001",
+    "user_id": "user-123",
+    "user_text": "Estou com uma mancha estranha na pele, coçando bastante. Tenho uma pomada com corticoide em casa. Posso usar?",
+    "facts": {
+      "domain": "healthcare",
+      "contains_health_data": true,
+      "contains_sensitive_health_data": true,
+      "request_type": "clinical_recommendation",
+      "mentions_medication": true,
+      "requires_professional_evaluation": true,
+      "legal_basis_confirmed": false,
+      "fact_extraction_confidence": 0.83
+    }
+  },
+  "draft": {
+    "text": "Pode usar a pomada com corticoide por alguns dias. É seguro usar.",
+    "facts": {
+      "domain": "healthcare",
+      "contains_health_data": true,
+      "contains_sensitive_health_data": true,
+      "request_type": "clinical_recommendation",
+      "mentions_medication": true
+    },
+    "confidence": 0.82
+  },
+  "plugins": [
+    "lgpd_br_simplified",
+    "medical_safety_simplified",
+    "internal_policy_simplified"
+  ]
+}

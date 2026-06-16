@@ -1,0 +1,16 @@
+{
+  "context": {
+    "tenant_id": "clinic-asp-demo",
+    "session_id": "asp-eval-001",
+    "user_id": "user-123",
+    "user_text": "Tenho uma mancha na pele e quero fazer uma pré-anamnese.",
+    "facts": {
+      "domain": "healthcare",
+      "contains_sensitive_health_data": true,
+      "request_type": "general_information",
+      "purpose": "process_health_data_for_pre_anamnesis",
+      "current_time": 10,
+      "temporal_events": []
+    }
+  }
+}

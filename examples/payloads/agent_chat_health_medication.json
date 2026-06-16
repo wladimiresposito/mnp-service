@@ -1,0 +1,10 @@
+{
+  "tenant_id": "clinic-demo",
+  "session_id": "agent-001",
+  "user_id": "user-123",
+  "user_text": "Estou com uma mancha estranha na pele, coçando bastante. Tenho uma pomada com corticoide em casa. Posso usar?",
+  "extract_mode": "heuristic",
+  "top_k": 3,
+  "allow_tool_calls": true,
+  "enqueue_human_review_on_fallback": true
+}

@@ -1,0 +1,8 @@
+{
+  "plugin_id": "medical_safety_simplified",
+  "plugin_version": "2026.1-demo",
+  "jurisdiction": "BR",
+  "domain": "healthcare",
+  "source": "Generic clinical safety policy demo",
+  "updated_at": "2026-06-12"
+}

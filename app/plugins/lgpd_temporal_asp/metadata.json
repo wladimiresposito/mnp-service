@@ -1,0 +1,8 @@
+{
+  "plugin_id": "lgpd_temporal_asp",
+  "plugin_version": "2026.1-experimental",
+  "jurisdiction": "BR",
+  "domain": "data_protection_temporal",
+  "source": "Experimental ASP/Event Calculus-style consent rules",
+  "updated_at": "2026-06-12"
+}

@@ -1,0 +1,9 @@
+{
+  "tenant_id": "clinic-demo",
+  "session_id": "extract-002",
+  "user_id": "user-456",
+  "user_text": "Posso fazer isso?",
+  "mode": "heuristic",
+  "low_confidence_threshold": 0.7,
+  "enqueue_human_review_on_fallback": true
+}
